@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereum DApp - Main</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #001334;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .logout-btn {
+            background-color: #ffffff;
+            color: #007bff;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background-color: #0056b3;
+            color: #fff;
+            border-color: #0056b3;
+        }
+
+        .content {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .image-link {
+            position: relative;
+            display: block;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            max-height: 150px; /* 控制图片容器的最大高度 */
+        }
+
+        .image-link img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 裁剪图片以适应容器 */
+            opacity: 0.8; /* 提高透明度 */
+            transition: opacity 0.1s ease; /* 悬停效果 */
+        }
+
+        .image-link:hover img {
+            opacity: 1; /* 悬停时变为不透明 */
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 15px;
+            }
+
+            .overlay-text {
+                font-size: 20px;
+            }
+
+            .logout-btn {
+                padding: 6px 12px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>Main</h2>
+        <form action="/login" method="post" style="margin: 0;">
+            <button type="submit" class="logout-btn">Logout</button>
+        </form>
+    </div>
+
+    <div class="content">
+        <a href="/store_money" class="image-link">
+            <img src="static/store_money.png" alt="Store Money">
+            <div class="overlay-text">Store Money</div>
+        </a>
+
+        <a href="/transfer_money" class="image-link">
+            <img src="static/transfer_money.png" alt="Transfer Money">
+            <div class="overlay-text">Transfer Money</div>
+        </a>
+
+        <a href="/admin" class="image-link">
+            <img src="static/admin.png" alt="Admin">
+            <div class="overlay-text">Admin</div>
+        </a>
+    </div>
+</body>
+</html>
